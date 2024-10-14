@@ -1,28 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import SignInScreen from './screen/SignInScreen';
+import { NavigationContainer } from '@react-navigation/native';
 
-export default function App() {
-  console.log('Expo React Native');
-  consol.Rog;
-  const name = 'Taehan';
-  const isFullname = true;
-  {
-    /* 주석 */
-  }
-  const add = (a, b) => {
-    return a + b;
-  };
+const App = () => {
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      <Text style={{ fontSize: 30 }}>ToDo App</Text>
-    </View>
+    <NavigationContainer>
+      <StatusBar style="dark" />
+      <SignInScreen />
+    </NavigationContainer>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: WHITE,
   },
 });
