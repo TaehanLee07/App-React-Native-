@@ -1,19 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
-import SignInScreen from './screen/SignInScreen';
 import { NavigationContainer } from '@react-navigation/native';
+import AuthStack from './navigations/AuthStack';
+import MainStack from './navigations/MainStack';
+import { useState } from 'react';
+import UserContext, {UserProvider} from './contexts/UserContext';
 
 const App = () => {
+  const [user, setUser] = useState(null);
+
   return (
-    <NavigationContainer>
-      <StatusBar style="dark" />
-      <SignInScreen />
-    </NavigationContainer>
+    <UserProvider>
+      <NavigationContainer>
+        <StatusBar style="dark" />
+        <UserContext.Consumer>
+          {({ user }) => (<MainStack/> : <AuthStack />)}
+        </UserContext.Consumer>
+      </NavigationContainer>
+    </UserProvider>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: WHITE,
-  },
-});
+export default App;
