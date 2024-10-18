@@ -11,7 +11,7 @@ const App = () => {
   return (
     <UserProvider>
       <NavigationContainer>
-        <StatusBar style="dark" />
+        <StatusBar style="dark" /> 
         <UserContext.Consumer>
           {({ user }) => (<MainStack/> : <AuthStack />)}
         </UserContext.Consumer>
