@@ -1,21 +1,13 @@
+import 'react-native-get-random-values';
 import { StatusBar } from 'expo-status-bar';
-import { NavigationContainer } from '@react-navigation/native';
-import AuthStack from './navigations/AuthStack';
-import MainStack from './navigations/MainStack';
-import { useState } from 'react';
-import UserContext, {UserProvider} from './contexts/UserContext';
+import { UserProvider } from './contexts/UserContext';
+import Navigation from './navigations/Navigation';
 
 const App = () => {
-  const [user, setUser] = useState(null);
-
   return (
     <UserProvider>
-      <NavigationContainer>
-        <StatusBar style="dark" /> 
-        <UserContext.Consumer>
-          {({ user }) => (<MainStack/> : <AuthStack />)}
-        </UserContext.Consumer>
-      </NavigationContainer>
+      <StatusBar style="dark" />
+      <Navigation />
     </UserProvider>
   );
 };

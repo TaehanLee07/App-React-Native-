@@ -4,7 +4,7 @@ import Input, {
   ReturnKeyTypes,
   IconNames,
 } from '../components/Input';
-import { useState, useRef, useEffect } from 'react';
+import { useContext, useState, useRef, useEffect } from 'react';
 import Button from '../components/Button';
 import { signIn } from '../api/auth';
 import PropTypes from 'prop-types';
